@@ -120,10 +120,10 @@ def parse_args() -> argparse.Namespace:
                    help="HuggingFace token. Falls back to HF_TOKEN env var.")
 
     # ── LLM judge ─────────────────────────────────────────────────────────────
-    g = p.add_argument_group("LLM judge (optional, requires OPENAI_API_KEY)")
+    g = p.add_argument_group("LLM judge (optional, requires ANTHROPIC_API_KEY)")
     g.add_argument("--judge", action="store_true",
                    help="Evaluate outputs with an LLM judge after generation.")
-    g.add_argument("--judge_model", default="gpt-4o-mini")
+    g.add_argument("--judge_model", default="claude-haiku-4-5")
     g.add_argument("--n_guesses", type=int, default=10,
                    help="Number of hypotheses the judge generates (default: 10).")
 

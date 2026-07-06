@@ -71,7 +71,7 @@ pip install flash-attn --no-build-isolation   # ~2× faster on A100/H100
 **Environment variables:**
 ```bash
 export HF_TOKEN="hf_..."        # Required for gated HuggingFace models
-export OPENAI_API_KEY="sk-..."  # Required only if using --judge
+export ANTHROPIC_API_KEY="sk-ant-..."  # Required only if using --judge
 ```
 
 ---
@@ -131,7 +131,7 @@ python svd_truncation.py \
 adversarial_decoding.py   Core AdversarialDecoder class
 svd_truncation.py         SVD rank truncation — interface defined, implementation coming
 prompts.py                Safety prompts, AuditBench probe questions, and model registry
-judge.py                  Optional LLM judge (OpenAI) — shared by both methods
+judge.py                  Optional LLM judge (Anthropic) — shared by both methods
 run.py                    CLI: adversarial decoding on any arbitrary model
 run_auditbench.py         AuditBench sweep for adversarial decoding (14B + 70B)
 diagnostics.py            Perplexity and embedding similarity analysis

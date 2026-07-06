@@ -115,11 +115,11 @@ def parse_args() -> argparse.Namespace:
                    help="Disable prefill strings even when using AuditBench probes.")
 
     # ── LLM judge ─────────────────────────────────────────────────────────────
-    g = p.add_argument_group("LLM judge (optional, requires OPENAI_API_KEY)")
+    g = p.add_argument_group("LLM judge (optional, requires ANTHROPIC_API_KEY)")
     g.add_argument("--judge", action="store_true",
                    help="Run LLM judge on adversarial outputs.")
-    g.add_argument("--judge_model", default="gpt-4o-mini",
-                   help="OpenAI model to use as judge (default: gpt-4o-mini).")
+    g.add_argument("--judge_model", default="claude-haiku-4-5",
+                   help="Anthropic model to use as judge (default: claude-haiku-4-5).")
     g.add_argument("--n_guesses", type=int, default=10,
                    help="Number of hypotheses for the judge to generate (default: 10).")
     g.add_argument("--quirk_labels", default=None,
